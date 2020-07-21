@@ -4,7 +4,7 @@ declare(strict_types=1);
 namespace App\User;
 
 use Psr\Container\ContainerInterface;
-use Zend\Db\Adapter\AdapterInterface;
+use Laminas\Db\Adapter\AdapterInterface;
 
 class UserModelFactory
 {

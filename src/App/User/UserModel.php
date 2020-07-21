@@ -6,11 +6,11 @@ namespace App\User;
 use App\Exception;
 use DomainException;
 use PDOException;
-use Zend\Db\Adapter\AdapterInterface;
-use Zend\Db\ResultSet\HydratingResultSet;
-use Zend\Db\TableGateway\TableGateway;
-use Zend\Paginator\Adapter\DbTableGateway;
-use Zend\Paginator\Paginator;
+use Laminas\Db\Adapter\AdapterInterface;
+use Laminas\Db\ResultSet\HydratingResultSet;
+use Laminas\Db\TableGateway\TableGateway;
+use Laminas\Paginator\Adapter\DbTableGateway;
+use Laminas\Paginator\Paginator;
 
 class UserModel
 {

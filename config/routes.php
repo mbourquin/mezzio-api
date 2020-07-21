@@ -3,10 +3,10 @@
 declare(strict_types=1);
 
 use Psr\Container\ContainerInterface;
-use Zend\Expressive\Application;
-use Zend\Expressive\Authentication;
-use Zend\Expressive\Helper\BodyParams\BodyParamsMiddleware;
-use Zend\Expressive\MiddlewareFactory;
+use Mezzio\Application;
+use Mezzio\Authentication;
+use Mezzio\Helper\BodyParams\BodyParamsMiddleware;
+use Mezzio\MiddlewareFactory;
 
 return function (Application $app, MiddlewareFactory $factory, ContainerInterface $container) : void {
     // OAuth2 token route

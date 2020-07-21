@@ -4,9 +4,9 @@ declare(strict_types=1);
 namespace App\User;
 
 use Psr\Container\ContainerInterface;
-use Zend\Db\Adapter\AdapterInterface;
-use Zend\Expressive\Hal\HalResponseFactory;
-use Zend\Expressive\Hal\ResourceGenerator;
+use Laminas\Db\Adapter\AdapterInterface;
+use Mezzio\Hal\HalResponseFactory;
+use Mezzio\Hal\ResourceGenerator;
 
 class ModifyUserHandlerFactory
 {

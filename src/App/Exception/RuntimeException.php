@@ -4,8 +4,8 @@ declare(strict_types=1);
 namespace App\Exception;
 
 use DomainException;
-use Zend\ProblemDetails\Exception\CommonProblemDetailsExceptionTrait;
-use Zend\ProblemDetails\Exception\ProblemDetailsExceptionInterface;
+use Mezzio\ProblemDetails\Exception\CommonProblemDetailsExceptionTrait;
+use Mezzio\ProblemDetails\Exception\ProblemDetailsExceptionInterface;
 
 class RuntimeException extends DomainException implements ProblemDetailsExceptionInterface
 {

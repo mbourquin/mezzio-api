@@ -3,10 +3,10 @@ declare(strict_types=1);
 
 namespace App\User;
 
-use Zend\Filter\StringTrim;
-use Zend\InputFilter\InputFilter;
-use Zend\Validator\EmailAddress;
-use Zend\Validator\StringLength;
+use Laminas\Filter\StringTrim;
+use Laminas\InputFilter\InputFilter;
+use Laminas\Validator\EmailAddress;
+use Laminas\Validator\StringLength;
 
 class UserInputFilter extends InputFilter
 {

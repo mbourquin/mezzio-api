@@ -3,11 +3,11 @@ declare(strict_types=1);
 
 namespace App;
 
-use Zend\Expressive\Authentication;
-use Zend\Expressive\Hal\Metadata\MetadataMap;
-use Zend\Expressive\Hal\Metadata\RouteBasedCollectionMetadata;
-use Zend\Expressive\Hal\Metadata\RouteBasedResourceMetadata;
-use Zend\Hydrator\ObjectProperty as ObjectPropertyHydrator;
+use Mezzio\Authentication;
+use Mezzio\Hal\Metadata\MetadataMap;
+use Mezzio\Hal\Metadata\RouteBasedCollectionMetadata;
+use Mezzio\Hal\Metadata\RouteBasedResourceMetadata;
+use Laminas\Hydrator\ObjectProperty as ObjectPropertyHydrator;
 
 /**
  * The configuration provider for the App module

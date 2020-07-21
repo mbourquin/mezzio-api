@@ -1,6 +1,6 @@
 # Zend Expressive API - Skeleton example
 
-This is a (proposed) skeleton application for building REST APIs using [zend-expressive](https://github.com/zendframework/zend-expressive).
+This is a (proposed) skeleton application for building REST APIs using [zend-expressive](https://github.com/mezzio/mezzio).
 
 The representational format used is [HAL-JSON](https://tools.ietf.org/html/draft-kelly-json-hal-08),
 and the error reporting format used is [Problem Details for HTTP APIs](https://tools.ietf.org/html/rfc7807).
@@ -90,7 +90,7 @@ $ sqlite3 data/users.sqlite < data/schema.sql
 $ sqlite3 data/users.sqlite < data/data.sql
 
 # Creating and populating the OAuth2 database
-$ sqlite3 data/oauth2.sqlite < vendor/zendframework/zend-expressive-authentication-oauth2/data/oauth2.sql
+$ sqlite3 data/oauth2.sqlite < vendor/mezzio/mezzio-authentication-oauth2/data/oauth2.sql
 $ sqlite3 data/oauth2.sqlite < data/oauth2_test_users.sql
 ```
 

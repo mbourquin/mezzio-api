@@ -5,9 +5,9 @@ namespace App;
 
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
-use Zend\Expressive\Hal\HalResponseFactory;
-use Zend\Expressive\Hal\ResourceGenerator;
-use Zend\Expressive\Hal\ResourceGenerator\Exception\OutOfBoundsException;
+use Mezzio\Hal\HalResponseFactory;
+use Mezzio\Hal\ResourceGenerator;
+use Mezzio\Hal\ResourceGenerator\Exception\OutOfBoundsException;
 
 trait RestDispatchTrait
 {

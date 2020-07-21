@@ -7,7 +7,7 @@ namespace App\Doc;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Server\RequestHandlerInterface;
-use Zend\Diactoros\Response\TextResponse;
+use Laminas\Diactoros\Response\TextResponse;
 
 class OutOfBoundsHandler implements RequestHandlerInterface
 {

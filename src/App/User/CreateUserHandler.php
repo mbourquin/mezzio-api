@@ -7,10 +7,10 @@ use App\RestDispatchTrait;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Server\RequestHandlerInterface;
-use Zend\Diactoros\Response\EmptyResponse;
-use Zend\Expressive\Hal\HalResponseFactory;
-use Zend\Expressive\Hal\ResourceGenerator;
-use Zend\Expressive\Helper\UrlHelper;
+use Laminas\Diactoros\Response\EmptyResponse;
+use Mezzio\Hal\HalResponseFactory;
+use Mezzio\Hal\ResourceGenerator;
+use Mezzio\Helper\UrlHelper;
 
 class CreateUserHandler implements RequestHandlerInterface
 {

@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace App\User;
 
-use Zend\Paginator\Paginator;
+use Laminas\Paginator\Paginator;
 
 class UserCollection extends Paginator
 {
