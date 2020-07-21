@@ -1,6 +1,6 @@
 # Mezzio API - Skeleton example
 
-** Migrated to Mezzio from [ezimuel/zend-expressive-api](https://github.com/ezimuel/zend-expressive-api) **
+**Migrated to [Mezzio](https://github.com/mezzio) from Zend Expressive [ezimuel/zend-expressive-api](https://github.com/ezimuel/zend-expressive-api)**
 
 This is a (proposed) skeleton application for building REST APIs using [mezzio](https://github.com/mezzio/mezzio).
 
