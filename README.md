@@ -1,6 +1,6 @@
-# Zend Expressive API - Skeleton example
+# Mezzio API - Skeleton example
 
-This is a (proposed) skeleton application for building REST APIs using [zend-expressive](https://github.com/mezzio/mezzio).
+This is a (proposed) skeleton application for building REST APIs using [mezzio](https://github.com/mezzio/mezzio).
 
 The representational format used is [HAL-JSON](https://tools.ietf.org/html/draft-kelly-json-hal-08),
 and the error reporting format used is [Problem Details for HTTP APIs](https://tools.ietf.org/html/rfc7807).
@@ -30,7 +30,7 @@ $ composer development-enable
 ## Vagrant
 
 You can execute [Vagrant](https://www.vagrantup.com/) to setup a Linux
-environment to run the `zend-expressive-api` application.
+environment to run the `mezzio-api` application.
 
 This setup will install the following environment:
 
@@ -52,7 +52,7 @@ This will require some times (the first execution). When finished, you can see
 the application running at `localhost:8080`.
 
 The web directory of the nginx server is configured to the `public` folder
-(`/home/ubuntu/zend-expressive-api` in the VM). You have also the logs of the
+(`/home/ubuntu/mezzio-api` in the VM). You have also the logs of the
 web server (access_log, error_log) configured in the `log` local folder.
 
 If you want to connect to the VM you can SSH into it, using the command:
