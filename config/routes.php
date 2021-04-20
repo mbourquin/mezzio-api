@@ -9,11 +9,17 @@ use Mezzio\Helper\BodyParams\BodyParamsMiddleware;
 use Mezzio\MiddlewareFactory;
 
 return function (Application $app, MiddlewareFactory $factory, ContainerInterface $container) : void {
+    
     // OAuth2 token route
     $app->post('/oauth', Authentication\OAuth2\TokenEndpointHandler::class, 'oauth-token');
 
     // API
-    $app->get('/api/users[/{id}]', App\User\UserHandler::class, 'api.users');
+    $app->get('/api/users[/{id}]', [
+        Authentication\AuthenticationMiddleware::class,
+        BodyParamsMiddleware::class,
+        App\User\UserHandler::class
+    ], 'api.users');
+
     $app->post('/api/users', [
         Authentication\AuthenticationMiddleware::class,
         BodyParamsMiddleware::class,

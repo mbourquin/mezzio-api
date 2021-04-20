@@ -79,7 +79,16 @@ class ConfigProvider
             'auth_code_expire'     => 'PT10M',
             'pdo' => [
                 'dsn' => 'sqlite:' . getcwd() . '/data/oauth2.sqlite'
-            ]
+            ],
+
+            // Set value to null to disable a grant
+            'grants' => [
+                Grant\ClientCredentialsGrant::class => null,//Grant\ClientCredentialsGrant::class,
+                Grant\PasswordGrant::class          => Grant\PasswordGrant::class,
+                Grant\AuthCodeGrant::class          => null,//Grant\AuthCodeGrant::class,
+                Grant\ImplicitGrant::class          => null,//Grant\ImplicitGrant::class,
+                Grant\RefreshTokenGrant::class      => null,//Grant\RefreshTokenGrant::class
+            ],
         ];
     }
 }
