@@ -8,6 +8,7 @@ use Mezzio\Hal\Metadata\MetadataMap;
 use Mezzio\Hal\Metadata\RouteBasedCollectionMetadata;
 use Mezzio\Hal\Metadata\RouteBasedResourceMetadata;
 use Laminas\Hydrator\ObjectProperty as ObjectPropertyHydrator;
+use League\OAuth2\Server\Grant;
 
 /**
  * The configuration provider for the App module
@@ -85,7 +86,7 @@ class ConfigProvider
             'grants' => [
                 Grant\ClientCredentialsGrant::class => null,//Grant\ClientCredentialsGrant::class,
                 Grant\PasswordGrant::class          => Grant\PasswordGrant::class,
-                Grant\AuthCodeGrant::class          => null,//Grant\AuthCodeGrant::class,
+                Grant\AuthCodeGrant::class          => Grant\AuthCodeGrant::class,
                 Grant\ImplicitGrant::class          => null,//Grant\ImplicitGrant::class,
                 Grant\RefreshTokenGrant::class      => null,//Grant\RefreshTokenGrant::class
             ],

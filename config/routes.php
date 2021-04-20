@@ -13,6 +13,11 @@ return function (Application $app, MiddlewareFactory $factory, ContainerInterfac
     // OAuth2 token route
     $app->post('/oauth', Authentication\OAuth2\TokenEndpointHandler::class, 'oauth-token');
 
+    // OAuth2 authorize (testing, not working)
+    $app->get('/authorize', [
+        Authentication\OAuth2\AuthorizationMiddleware::class,
+        Authentication\OAuth2\AuthorizationHandler::class]);
+
     // API
     $app->get('/api/users[/{id}]', [
         Authentication\AuthenticationMiddleware::class,
