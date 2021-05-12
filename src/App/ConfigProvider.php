@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace App;
@@ -7,7 +8,7 @@ use Mezzio\Authentication;
 use Mezzio\Hal\Metadata\MetadataMap;
 use Mezzio\Hal\Metadata\RouteBasedCollectionMetadata;
 use Mezzio\Hal\Metadata\RouteBasedResourceMetadata;
-use Laminas\Hydrator\ObjectProperty as ObjectPropertyHydrator;
+use Laminas\Hydrator\ObjectPropertyHydrator;
 use League\OAuth2\Server\Grant;
 
 /**
@@ -24,19 +25,20 @@ class ConfigProvider
      * method which returns an array with its configuration.
      *
      */
-    public function __invoke() : array
+    public function __invoke(): array
     {
         return [
             'dependencies' => $this->getDependencies(),
-            MetadataMap::class => $this->getHalConfig(),
             'authentication' => $this->getAuthenticationConfig(),
+            'templates'    => $this->getTemplates(),
+            MetadataMap::class => $this->getHalConfig(),
         ];
     }
 
     /**
      * Returns the container dependencies
      */
-    public function getDependencies() : array
+    public function getDependencies(): array
     {
         return [
             'factories'  => [
@@ -51,7 +53,23 @@ class ConfigProvider
         ];
     }
 
-    public function getHalConfig() : array
+
+    /**
+     * Returns the templates configuration
+     */
+    public function getTemplates(): array
+    {
+        return [
+            'paths' => [
+                'app'    => ['templates/app'],
+                'error'  => ['templates/error'],
+                'layout' => ['templates/layout'],
+            ],
+        ];
+    }
+
+
+    public function getHalConfig(): array
     {
         return [
             [
@@ -84,11 +102,11 @@ class ConfigProvider
 
             // Set value to null to disable a grant
             'grants' => [
-                Grant\ClientCredentialsGrant::class => null,//Grant\ClientCredentialsGrant::class,
+                Grant\ClientCredentialsGrant::class => Grant\ClientCredentialsGrant::class,
                 Grant\PasswordGrant::class          => Grant\PasswordGrant::class,
                 Grant\AuthCodeGrant::class          => Grant\AuthCodeGrant::class,
-                Grant\ImplicitGrant::class          => null,//Grant\ImplicitGrant::class,
-                Grant\RefreshTokenGrant::class      => null,//Grant\RefreshTokenGrant::class
+                Grant\ImplicitGrant::class          => Grant\ImplicitGrant::class,
+                Grant\RefreshTokenGrant::class      => Grant\RefreshTokenGrant::class
             ],
         ];
     }

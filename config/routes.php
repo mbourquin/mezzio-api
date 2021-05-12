@@ -7,16 +7,32 @@ use Mezzio\Application;
 use Mezzio\Authentication;
 use Mezzio\Helper\BodyParams\BodyParamsMiddleware;
 use Mezzio\MiddlewareFactory;
+use Mezzio\Authentication\OAuth2;
+use Mezzio\Session\SessionMiddleware;
 
-return function (Application $app, MiddlewareFactory $factory, ContainerInterface $container) : void {
-    
+return function (Application $app, MiddlewareFactory $factory, ContainerInterface $container): void {
+
     // OAuth2 token route
-    $app->post('/oauth', Authentication\OAuth2\TokenEndpointHandler::class, 'oauth-token');
+    $app->post('/oauth2/token', Authentication\OAuth2\TokenEndpointHandler::class);
 
-    // OAuth2 authorize (testing, not working)
-    $app->get('/authorize', [
-        Authentication\OAuth2\AuthorizationMiddleware::class,
-        Authentication\OAuth2\AuthorizationHandler::class]);
+    // OAuth2 authorize
+    $app->route('/oauth2/authorize', [
+        SessionMiddleware::class,
+
+        OAuth2\AuthorizationMiddleware::class,
+
+        // The following middleware is provided by your application (see below):
+        App\Middleware\OAuthAuthorizationMiddleware::class,
+
+        OAuth2\AuthorizationHandler::class
+    ], ['GET', 'POST']);
+
+
+    // OAuth2 login
+    $app->get('/oauth2/login', [
+        App\Handler\LoginHandler::class
+    ], 'api.login');
+
 
     // API
     $app->get('/api/users[/{id}]', [
