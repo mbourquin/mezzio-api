@@ -30,8 +30,9 @@ return function (Application $app, MiddlewareFactory $factory, ContainerInterfac
 
     // OAuth2 login
     $app->get('/oauth2/login', [
+        SessionMiddleware::class,
         App\Handler\LoginHandler::class
-    ], 'api.login');
+    ], 'login');
 
 
     // API
